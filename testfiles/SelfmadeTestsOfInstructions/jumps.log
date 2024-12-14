@@ -1,0 +1,33 @@
+=>       0    100b8 : FE010113     _start:                                       R[ 2] <- ffffffe0
+       1    100bc : 00112E23     sw       ra,28(sp)                            M[fffffffc] <- 0 (4 bytes)
+       2    100c0 : 00812C23     sw       s0,24(sp)                            M[fffffff8] <- 0 (4 bytes)
+       3    100c4 : 02010413     addi     s0,sp,32                             R[ 8] <- 0
+       4    100c8 : FADFF0EF     jal      ra,0x10074                           R[ 1] <- 100cc
+=>       5    10074 : FF010113     function_target:                              R[ 2] <- ffffffd0
+       6    10078 : 00812623     sw       s0,12(sp)                            M[ffffffdc] <- 0 (4 bytes)
+       7    1007c : 01010413     addi     s0,sp,16                             R[ 8] <- ffffffe0
+       8    10080 : 00000013     addi     zero,zero,0          
+       9    10084 : 00C12403     lw       s0,12(sp)                            R[ 8] <- 0
+      10    10088 : 01010113     addi     sp,sp,16                             R[ 2] <- ffffffe0
+      11    1008c : 00008067     jalr     zero,ra,0            
+=>      12    100cc : 000107B7     lui      a5,0x10                              R[15] <- 10000
+      13    100d0 : 09078793     addi     a5,a5,144                            R[15] <- 10090
+      14    100d4 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 10090 (4 bytes)
+      15    100d8 : FEC42783     lw       a5,-20(s0)                           R[15] <- 10090
+      16    100dc : 02A00513     addi     a0,zero,42                           R[10] <- 2a
+      17    100e0 : 000780E7     jalr     ra,a5,0                              R[ 1] <- 100e4
+=>      18    10090 : FE010113     indirect_target:                              R[ 2] <- ffffffc0
+      19    10094 : 00812E23     sw       s0,28(sp)                            M[ffffffdc] <- 0 (4 bytes)
+      20    10098 : 02010413     addi     s0,sp,32                             R[ 8] <- ffffffe0
+      21    1009c : FEA42623     sw       a0,-20(s0)                           M[ffffffcc] <- 2a (4 bytes)
+      22    100a0 : FEC42783     lw       a5,-20(s0)                           R[15] <- 2a
+      23    100a4 : 00178793     addi     a5,a5,1                              R[15] <- 2b
+      24    100a8 : 00078513     addi     a0,a5,0                              R[10] <- 2b
+      25    100ac : 01C12403     lw       s0,28(sp)                            R[ 8] <- 0
+      26    100b0 : 02010113     addi     sp,sp,32                             R[ 2] <- ffffffe0
+      27    100b4 : 00008067     jalr     zero,ra,0            
+=>      28    100e4 : FEA42423     sw       a0,-24(s0)                           M[ffffffe8] <- 2b (4 bytes)
+      29    100e8 : 00300893     addi     a7,zero,3                            R[17] <- 3
+      30    100ec : 00000073     ecall                         
+
+Simulated 31 instructions in 32 host ticks (0.968750 MIPS)

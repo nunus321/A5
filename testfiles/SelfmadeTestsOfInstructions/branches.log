@@ -1,0 +1,49 @@
+=>       0    10074 : FD010113     _start:                                       R[ 2] <- ffffffd0
+       1    10078 : 02812623     sw       s0,44(sp)                            M[fffffffc] <- 0 (4 bytes)
+       2    1007c : 03010413     addi     s0,sp,48                             R[ 8] <- 0
+       3    10080 : FE042623     sw       zero,-20(s0)                         M[ffffffec] <- 0 (4 bytes)
+       4    10084 : 00A00793     addi     a5,zero,10                           R[15] <- a
+       5    10088 : FEF42423     sw       a5,-24(s0)                           M[ffffffe8] <- a (4 bytes)
+       6    1008c : 01400793     addi     a5,zero,20                           R[15] <- 14
+       7    10090 : FEF42223     sw       a5,-28(s0)                           M[ffffffe4] <- 14 (4 bytes)
+       8    10094 : FEC42783     lw       a5,-20(s0)                           R[15] <- 0
+       9    10098 : 00178793     addi     a5,a5,1                              R[15] <- 1
+      10    1009c : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 1 (4 bytes)
+      11    100a0 : FE842703     lw       a4,-24(s0)                           R[14] <- a
+      12    100a4 : FE442783     lw       a5,-28(s0)                           R[15] <- 14
+      13    100a8 : 00F70863     beq      a4,a5,0x100b8        
+      14    100ac : FEC42783     lw       a5,-20(s0)                           R[15] <- 1
+      15    100b0 : 00178793     addi     a5,a5,1                              R[15] <- 2
+      16    100b4 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 2 (4 bytes)
+      17    100b8 : FE842703     lw       a4,-24(s0)                           R[14] <- a
+      18    100bc : FE442783     lw       a5,-28(s0)                           R[15] <- 14
+      19    100c0 : 00F75863     bge      a4,a5,0x100d0        
+      20    100c4 : FEC42783     lw       a5,-20(s0)                           R[15] <- 2
+      21    100c8 : 00178793     addi     a5,a5,1                              R[15] <- 3
+      22    100cc : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 3 (4 bytes)
+      23    100d0 : FE442703     lw       a4,-28(s0)                           R[14] <- 14
+      24    100d4 : FE842783     lw       a5,-24(s0)                           R[15] <- a
+      25    100d8 : 00F74863     blt      a4,a5,0x100e8        
+      26    100dc : FEC42783     lw       a5,-20(s0)                           R[15] <- 3
+      27    100e0 : 00178793     addi     a5,a5,1                              R[15] <- 4
+      28    100e4 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 4 (4 bytes)
+      29    100e8 : FFF00793     addi     a5,zero,-1                           R[15] <- ffffffff
+      30    100ec : FEF42023     sw       a5,-32(s0)                           M[ffffffe0] <- ffffffff (4 bytes)
+      31    100f0 : 00100793     addi     a5,zero,1                            R[15] <- 1
+      32    100f4 : FCF42E23     sw       a5,-36(s0)                           M[ffffffdc] <- 1 (4 bytes)
+      33    100f8 : FDC42703     lw       a4,-36(s0)                           R[14] <- 1
+      34    100fc : FE042783     lw       a5,-32(s0)                           R[15] <- ffffffff
+      35    10100 : 00F77863     bgeu     a4,a5,0x10110        
+      36    10104 : FEC42783     lw       a5,-20(s0)                           R[15] <- 4
+      37    10108 : 00178793     addi     a5,a5,1                              R[15] <- 5
+      38    1010c : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 5 (4 bytes)
+      39    10110 : FE042703     lw       a4,-32(s0)                           R[14] <- ffffffff
+      40    10114 : FDC42783     lw       a5,-36(s0)                           R[15] <- 1
+      41    10118 : 00F76863     bltu     a4,a5,0x10128        
+      42    1011c : FEC42783     lw       a5,-20(s0)                           R[15] <- 5
+      43    10120 : 00178793     addi     a5,a5,1                              R[15] <- 6
+      44    10124 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 6 (4 bytes)
+      45    10128 : 00300893     addi     a7,zero,3                            R[17] <- 3
+      46    1012c : 00000073     ecall                         
+
+Simulated 47 instructions in 40 host ticks (1.175000 MIPS)

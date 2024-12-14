@@ -1,0 +1,71 @@
+=>       0    10074 : FD010113     _start:                                       R[ 2] <- ffffffd0
+       1    10078 : 02812623     sw       s0,44(sp)                            M[fffffffc] <- 0 (4 bytes)
+       2    1007c : 03010413     addi     s0,sp,48                             R[ 8] <- 0
+       3    10080 : FE042623     sw       zero,-20(s0)                         M[ffffffec] <- 0 (4 bytes)
+       4    10084 : 07B00313     addi     t1,zero,123                          R[ 6] <- 7b
+       5    10088 : FE642423     sw       t1,-24(s0)                           M[ffffffe8] <- 7b (4 bytes)
+       6    1008c : 1C800313     addi     t1,zero,456                          R[ 6] <- 1c8
+       7    10090 : FE642223     sw       t1,-28(s0)                           M[ffffffe4] <- 1c8 (4 bytes)
+       8    10094 : FE842E03     lw       t3,-24(s0)                           R[28] <- 7b
+       9    10098 : FE442303     lw       t1,-28(s0)                           R[ 6] <- 1c8
+      10    1009c : 026E0333     mul      t1,t3,t1                             R[ 6] <- db18
+      11    100a0 : FE642623     sw       t1,-20(s0)                           M[ffffffec] <- db18 (4 bytes)
+      12    100a4 : 80000337     lui      t1,0xfff80000                        R[ 6] <- 80000000
+      13    100a8 : FFF30313     addi     t1,t1,-1                             R[ 6] <- 7fffffff
+      14    100ac : FE642023     sw       t1,-32(s0)                           M[ffffffe0] <- 7fffffff (4 bytes)
+      15    100b0 : 80000337     lui      t1,0xfff80000                        R[ 6] <- 80000000
+      16    100b4 : FFF30313     addi     t1,t1,-1                             R[ 6] <- 7fffffff
+      17    100b8 : FC642E23     sw       t1,-36(s0)                           M[ffffffdc] <- 7fffffff (4 bytes)
+      18    100bc : FE042303     lw       t1,-32(s0)                           R[ 6] <- 7fffffff
+      19    100c0 : 00030513     addi     a0,t1,0                              R[10] <- 7fffffff
+      20    100c4 : 41F35313     srai     t1,t1,31                             R[ 6] <- 0
+      21    100c8 : 00030593     addi     a1,t1,0                              R[11] <- 0
+      22    100cc : FDC42303     lw       t1,-36(s0)                           R[ 6] <- 7fffffff
+      23    100d0 : 00030613     addi     a2,t1,0                              R[12] <- 7fffffff
+      24    100d4 : 41F35313     srai     t1,t1,31                             R[ 6] <- 0
+      25    100d8 : 00030693     addi     a3,t1,0                              R[13] <- 0
+      26    100dc : 02C58E33     mul      t3,a1,a2                             R[28] <- 0
+      27    100e0 : 02A68333     mul      t1,a3,a0                             R[ 6] <- 0
+      28    100e4 : 006E0333     add      t1,t3,t1                             R[ 6] <- 0
+      29    100e8 : 02C50E33     mul      t3,a0,a2                             R[28] <- 1
+      30    100ec : 02C537B3     sltu     a5,a0,a2                             R[15] <- 0
+      31    100f0 : 000E0713     addi     a4,t3,0                              R[14] <- 1
+      32    100f4 : 00F306B3     add      a3,t1,a5                             R[13] <- 0
+      33    100f8 : 00068793     addi     a5,a3,0                              R[15] <- 0
+      34    100fc : 4007D813     srai     a6,a5,0                              R[16] <- 0
+      35    10100 : 41F7D893     srai     a7,a5,31                             R[17] <- 0
+      36    10104 : FF042623     sw       a6,-20(s0)                           M[ffffffec] <- 0 (4 bytes)
+      37    10108 : FE842703     lw       a4,-24(s0)                           R[14] <- 7b
+      38    1010c : FE442783     lw       a5,-28(s0)                           R[15] <- 1c8
+      39    10110 : 02F747B3     div      a5,a4,a5                             R[15] <- 0
+      40    10114 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 0 (4 bytes)
+      41    10118 : FE842783     lw       a5,-24(s0)                           R[15] <- 7b
+      42    1011c : 40F00733     sub      a4,zero,a5                           R[14] <- ffffff85
+      43    10120 : FE442783     lw       a5,-28(s0)                           R[15] <- 1c8
+      44    10124 : 02F747B3     div      a5,a4,a5                             R[15] <- 0
+      45    10128 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 0 (4 bytes)
+      46    1012c : FE842783     lw       a5,-24(s0)                           R[15] <- 7b
+      47    10130 : FCF42C23     sw       a5,-40(s0)                           M[ffffffd8] <- 7b (4 bytes)
+      48    10134 : FE442783     lw       a5,-28(s0)                           R[15] <- 1c8
+      49    10138 : FCF42A23     sw       a5,-44(s0)                           M[ffffffd4] <- 1c8 (4 bytes)
+      50    1013c : FD842703     lw       a4,-40(s0)                           R[14] <- 7b
+      51    10140 : FD442783     lw       a5,-44(s0)                           R[15] <- 1c8
+      52    10144 : 02F757B3     divu     a5,a4,a5                             R[15] <- 0
+      53    10148 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 0 (4 bytes)
+      54    1014c : FE842703     lw       a4,-24(s0)                           R[14] <- 7b
+      55    10150 : FE442783     lw       a5,-28(s0)                           R[15] <- 1c8
+      56    10154 : 02F767B3     rem      a5,a4,a5                             R[15] <- 7b
+      57    10158 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 7b (4 bytes)
+      58    1015c : FE842783     lw       a5,-24(s0)                           R[15] <- 7b
+      59    10160 : 40F00733     sub      a4,zero,a5                           R[14] <- ffffff85
+      60    10164 : FE442783     lw       a5,-28(s0)                           R[15] <- 1c8
+      61    10168 : 02F767B3     rem      a5,a4,a5                             R[15] <- ffffff85
+      62    1016c : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- ffffff85 (4 bytes)
+      63    10170 : FD842703     lw       a4,-40(s0)                           R[14] <- 7b
+      64    10174 : FD442783     lw       a5,-44(s0)                           R[15] <- 1c8
+      65    10178 : 02F777B3     remu     a5,a4,a5                             R[15] <- 7b
+      66    1017c : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- 7b (4 bytes)
+      67    10180 : 00300893     addi     a7,zero,3                            R[17] <- 3
+      68    10184 : 00000073     ecall                         
+
+Simulated 69 instructions in 47 host ticks (1.468085 MIPS)

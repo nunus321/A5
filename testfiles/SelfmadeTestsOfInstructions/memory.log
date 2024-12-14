@@ -1,0 +1,35 @@
+=>       0    10074 : F9010113     _start:                                       R[ 2] <- ffffff90
+       1    10078 : 06812623     sw       s0,108(sp)                           M[fffffffc] <- 0 (4 bytes)
+       2    1007c : 07010413     addi     s0,sp,112                            R[ 8] <- 0
+       3    10080 : F9C40793     addi     a5,s0,-100                           R[15] <- ffffff9c
+       4    10084 : FEF42623     sw       a5,-20(s0)                           M[ffffffec] <- ffffff9c (4 bytes)
+       5    10088 : 123457B7     lui      a5,0x12345                           R[15] <- 12345000
+       6    1008c : 67878793     addi     a5,a5,1656                           R[15] <- 12345678
+       7    10090 : F8F42E23     sw       a5,-100(s0)                          M[ffffff9c] <- 12345678 (4 bytes)
+       8    10094 : F9C42783     lw       a5,-100(s0)                          R[15] <- 12345678
+       9    10098 : FEF42423     sw       a5,-24(s0)                           M[ffffffe8] <- 12345678 (4 bytes)
+      10    1009c : F9C40793     addi     a5,s0,-100                           R[15] <- ffffff9c
+      11    100a0 : FEF42223     sw       a5,-28(s0)                           M[ffffffe4] <- ffffff9c (4 bytes)
+      12    100a4 : FE442783     lw       a5,-28(s0)                           R[15] <- ffffff9c
+      13    100a8 : 00001737     lui      a4,0x1                               R[14] <- 1000
+      14    100ac : 23470713     addi     a4,a4,564                            R[14] <- 1234
+      15    100b0 : 00E79023     sh       a4,0(a5)                             M[ffffff9c] <- 1234 (2 bytes)
+      16    100b4 : FE442783     lw       a5,-28(s0)                           R[15] <- ffffff9c
+      17    100b8 : 0007D783     lhu      a5,0(a5)                             R[15] <- 1234
+      18    100bc : FEF41123     sh       a5,-30(s0)                           M[ffffffe2] <- 1234 (2 bytes)
+      19    100c0 : FE442783     lw       a5,-28(s0)                           R[15] <- ffffff9c
+      20    100c4 : 00079783     lh       a5,0(a5)                             R[15] <- 1234
+      21    100c8 : FEF41023     sh       a5,-32(s0)                           M[ffffffe0] <- 1234 (2 bytes)
+      22    100cc : FEC42783     lw       a5,-20(s0)                           R[15] <- ffffff9c
+      23    100d0 : 01200713     addi     a4,zero,18                           R[14] <- 12
+      24    100d4 : 00E78023     sb       a4,0(a5)                             M[ffffff9c] <- 12 (1 bytes)
+      25    100d8 : FEC42783     lw       a5,-20(s0)                           R[15] <- ffffff9c
+      26    100dc : 0007C783     lbu      a5,0(a5)                             R[15] <- 12
+      27    100e0 : FCF40FA3     sb       a5,-33(s0)                           M[ffffffdf] <- 12 (1 bytes)
+      28    100e4 : FEC42783     lw       a5,-20(s0)                           R[15] <- ffffff9c
+      29    100e8 : 0007C783     lbu      a5,0(a5)                             R[15] <- 12
+      30    100ec : FCF40F23     sb       a5,-34(s0)                           M[ffffffde] <- 12 (1 bytes)
+      31    100f0 : 00300893     addi     a7,zero,3                            R[17] <- 3
+      32    100f4 : 00000073     ecall                         
+
+Simulated 33 instructions in 32 host ticks (1.031250 MIPS)

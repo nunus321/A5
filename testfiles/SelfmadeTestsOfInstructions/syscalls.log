@@ -1,0 +1,13 @@
+=>       0    10074 : FE010113     _start:                                       R[ 2] <- ffffffe0
+       1    10078 : 00812E23     sw       s0,28(sp)                            M[fffffffc] <- 0 (4 bytes)
+       2    1007c : 02010413     addi     s0,sp,32                             R[ 8] <- 0
+       3    10080 : 00100893     addi     a7,zero,1                            R[17] <- 1
+       4    10084 : 00000073     ecall                                         R[10] <- a
+       5    10088 : FEA42623     sw       a0,-20(s0)                           M[ffffffec] <- a (4 bytes)
+       6    1008c : 00200893     addi     a7,zero,2                            R[17] <- 2
+       7    10090 : FEC42503     lw       a0,-20(s0)                           R[10] <- a
+       8    10094 : 00000073     ecall                         
+       9    10098 : 00300893     addi     a7,zero,3                            R[17] <- 3
+      10    1009c : 00000073     ecall                         
+
+Simulated 11 instructions in 86 host ticks (0.127907 MIPS)
